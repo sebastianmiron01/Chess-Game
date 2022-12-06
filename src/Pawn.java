@@ -21,13 +21,13 @@ public class Pawn extends Game implements Piece {
             if(board[x][y+1]!=1)
             {
                 aux="3";
-                PlayerAvailableMoves.add(converter.get(x)+aux);
+                PlayerAvailableMoves.add(converter.get(x)+(y+2));
 
             }
             if(board[x][y+2]!=1)
             {
                 aux="4";
-                PlayerAvailableMoves.add(converter.get(x)+aux);
+                PlayerAvailableMoves.add(converter.get(x)+(y+3));
 
             }
         }
@@ -35,21 +35,21 @@ public class Pawn extends Game implements Piece {
         {
             a=y+2;
             aux=a.toString();
-            PlayerAvailableMoves.add(converter.get(x)+aux);
+            PlayerAvailableMoves.add(converter.get(x)+(y+2));
 
         }
         if(this.x!=7&&board[this.x+1][this.y+1]==2)
         {
             a=x+2;
             aux=a.toString();
-            PlayerAvailableMoves.add(converter.get(x)+"x"+aux);
+            PlayerAvailableMoves.add(converter.get(x)+"x"+converter.get(x+1)+(y+2));
 
         }
         if(this.x!=0&&board[this.x-1][this.y+1]==2)
         {
             a=x;
             aux=a.toString();
-            PlayerAvailableMoves.add(converter.get(x)+"x"+aux);
+            PlayerAvailableMoves.add(converter.get(x)+"x"+converter.get(x-1)+(y+2));
 
         }
     }
