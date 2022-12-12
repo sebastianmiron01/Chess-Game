@@ -1,3 +1,3 @@
 public interface Piece{
-    public void computePossibleMoves();
+    void computePossibleMoves();
 }

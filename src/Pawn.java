@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.BitSet;
+
 
 public class Pawn extends Game implements Piece {
     public Color color;
