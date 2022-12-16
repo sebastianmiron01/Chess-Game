@@ -20,22 +20,22 @@ public class Knight extends Game implements Piece {
             if(board[x+2][y-1]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x+2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x+2)+(y));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+2)+(y));}
+                        if(board[x+2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y));}
                     }
                     else {
-                        if(board[x+2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x+2)+(y));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+2)+(y));}
+                        if(board[x+2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x+2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x+2)+(y));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+2)+(y));}
+                        if(board[x+2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y));}
                     }
                     else {
-                        if(board[x+2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x+2)+(y));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+2)+(y));}
+                        if(board[x+2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y));}
                     }
                 }
 
@@ -45,22 +45,22 @@ public class Knight extends Game implements Piece {
             if(board[x+2][y+1]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x+2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x+2)+(y+2));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+2)+(y+2));}
+                        if(board[x+2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y+2));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y+2));}
                     }
                     else {
-                        if(board[x+2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x+2)+(y+2));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+2)+(y+2));}
+                        if(board[x+2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y+2));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y+2));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x+2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x+2)+(y+2));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+2)+(y+2));}
+                        if(board[x+2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y+2));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y+2));}
                     }
                     else {
-                        if(board[x+2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x+2)+(y+2));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+2)+(y+2));}
+                        if(board[x+2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+2)+(y+2));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+2)+(y+2));}
                     }
                 }
 
@@ -73,22 +73,22 @@ public class Knight extends Game implements Piece {
             if(board[x-2][y-1]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x-2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x-2)+(y));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-2)+(y));}
+                        if(board[x-2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y));}
                     }
                     else {
-                        if(board[x-2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x-2)+(y));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-2)+(y));}
+                        if(board[x-2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x-2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x-2)+(y));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-2)+(y));}
+                        if(board[x-2][y-1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y));}
                     }
                     else {
-                        if(board[x-2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x-2)+(y));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-2)+(y));}
+                        if(board[x-2][y-1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y));}
                     }
                 }
 
@@ -98,22 +98,22 @@ public class Knight extends Game implements Piece {
             if(board[x-2][y+1]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x-2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x-2)+(y+2));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-2)+(y+2));}
+                        if(board[x-2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y+2));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y+2));}
                     }
                     else {
-                        if(board[x-2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x-2)+(y+2));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-2)+(y+2));}
+                        if(board[x-2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y+2));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y+2));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x-2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x-2)+(y+2));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-2)+(y+2));}
+                        if(board[x-2][y+1]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y+2));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y+2));}
                     }
                     else {
-                        if(board[x-2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x-2)+(y+2));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-2)+(y+2));}
+                        if(board[x-2][y+1]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-2)+(y+2));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-2)+(y+2));}
                     }
                 }
 
@@ -126,22 +126,22 @@ public class Knight extends Game implements Piece {
             if(board[x-1][y+2]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x-1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x-1)+(y+3));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-1)+(y+3));}
+                        if(board[x-1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y+3));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+3));}
                     }
                     else {
-                        if(board[x-1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x-1)+(y+3));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-1)+(y+3));}
+                        if(board[x-1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y+3));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+3));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x-1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x-1)+(y+3));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-1)+(y+3));}
+                        if(board[x-1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y+3));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+3));}
                     }
                     else {
-                        if(board[x-1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x-1)+(y+3));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-1)+(y+3));}
+                        if(board[x-1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y+3));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+3));}
                     }
                 }
 
@@ -151,22 +151,22 @@ public class Knight extends Game implements Piece {
             if(board[x+1][y+2]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x+1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x+1)+(y+3));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+1)+(y+3));}
+                        if(board[x+1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y+3));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+3));}
                     }
                     else {
-                        if(board[x+1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x+1)+(y+3));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+1)+(y+3));}
+                        if(board[x+1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y+3));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+3));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x+1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x+1)+(y+3));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+1)+(y+3));}
+                        if(board[x+1][y+2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y+3));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+3));}
                     }
                     else {
-                        if(board[x+1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x+1)+(y+3));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+1)+(y+3));}
+                        if(board[x+1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y+3));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+3));}
                     }
                 }
 
@@ -179,22 +179,22 @@ public class Knight extends Game implements Piece {
             if(board[x-1][y-2]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x-1][y-2]==0){PlayerAvailableMoves.add("n"+converter.get(x-1)+(y-1));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-1)+(y-1));}
+                        if(board[x-1][y-2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y-1));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y-1));}
                     }
                     else {
-                        if(board[x-1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x-1)+(y-1));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-1)+(y-1));}
+                        if(board[x-1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y-1));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y-1));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x-1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x-1)+(y-1));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x-1)+(y-1));}
+                        if(board[x-1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y-1));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y-1));}
                     }
                     else {
-                        if(board[x-1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x-1)+(y-1));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x-1)+(y-1));}
+                        if(board[x-1][y+2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x-1)+(y-1));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y-1));}
                     }
                 }
 
@@ -204,22 +204,22 @@ public class Knight extends Game implements Piece {
             if(board[x+1][y-2]!=board[x][y]) {
                 if(whiteColor) {
                     if(this.color==Color.WHITE) {
-                        if(board[x+1][y-2]==0){PlayerAvailableMoves.add("n"+converter.get(x+1)+(y-1));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+1)+(y-1));}
+                        if(board[x+1][y-2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x)+(y+1)+converter.get(x+1)+(y-1));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y-1));}
                     }
                     else {
-                        if(board[x+1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x+1)+(y-1));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+1)+(y-1));}
+                        if(board[x+1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y-1));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y-1));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE) {
-                        if(board[x+1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x+1)+(y-1));}
-                        else{BotAvailableMoves.add("nx"+converter.get(x+1)+(y-1));}
+                        if(board[x+1][y-2]==0){BotAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y-1));}
+                        else{BotAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y-1));}
                     }
                     else {
-                        if(board[x+1][y-2]==0){PlayerAvailableMoves.add("n"+converter.get(x+1)+(y-1));}
-                        else{PlayerAvailableMoves.add("nx"+converter.get(x+1)+(y-1));}
+                        if(board[x+1][y-2]==0){PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+converter.get(x+1)+(y-1));}
+                        else{PlayerAvailableMoves.add("n"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y-1));}
                     }
                 }
 

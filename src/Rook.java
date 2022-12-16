@@ -25,13 +25,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax-1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(ax-1)+(ay+1));}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax-1)+(ay+1));break;}
+                        if(board[ax-1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax-1)+(ay+1));}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+(y+1)+converter.get(ax-1)+(ay+1));break;}
                     }
                     else
                     {
-                        if(board[ax-1][ay]==0){BotAvailableMoves.add("r"+converter.get(ax-1)+(ay+1));}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax-1)+(ay+1));break;}
+                        if(board[ax-1][ay]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(x)+converter.get(ax-1)+(ay+1));}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+1));break;}
                     }
                 }
                 else {break;}
@@ -41,13 +41,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax-1][ay]==0){BotAvailableMoves.add("r"+converter.get(ax-1)+(ay+1));}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax-1)+(ay+1));break;}
+                        if(board[ax-1][ay]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(x)+converter.get(ax-1)+(ay+1));}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+1));break;}
                     }
                     else
                     {
-                        if(board[ax-1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(ax-1)+(ay+1));}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax-1)+(ay+1));break;}
+                        if(board[ax-1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax-1)+(ay+1));}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+1));break;}
                     }
                 }
                 else {break;}
@@ -65,13 +65,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax+1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(ax+1)+(ay+1));}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax+1)+(ay+1));break;}
+                        if(board[ax+1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+1));}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+1));break;}
                     }
                     else
                     {
-                        if(board[ax+1][ay]==0){BotAvailableMoves.add("r"+converter.get(ax+1)+(ay+1));}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax+1)+(ay+1));break;}
+                        if(board[ax+1][ay]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+1));}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+1));break;}
                     }
                 }
                 else {break;}
@@ -81,13 +81,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax+1][ay]==0){BotAvailableMoves.add("r"+converter.get(ax+1)+(ay+1));}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax+1)+(ay+1));break;}
+                        if(board[ax+1][ay]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+1));}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+1));break;}
                     }
                     else
                     {
-                        if(board[ax+1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(ax+1)+(ay+1));}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax+1)+(ay+1));break;}
+                        if(board[ax+1][ay]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+1));}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+1));break;}
                     }
                 }
                 else {break;}
@@ -105,13 +105,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax][ay-1]==0){PlayerAvailableMoves.add("r"+converter.get(ax)+ay);}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax)+ay);break;}
+                        if(board[ax][ay-1]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+ay);}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+ay);break;}
                     }
                     else
                     {
-                        if(board[ax][ay-1]==0){BotAvailableMoves.add("r"+converter.get(ax)+ay);}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax)+ay);break;}
+                        if(board[ax][ay-1]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+ay);}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+ay);break;}
                     }
                 }
                 else {break;}
@@ -121,13 +121,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax][ay-1]==0){BotAvailableMoves.add("r"+converter.get(ax)+ay);}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax)+ay);break;}
+                        if(board[ax][ay-1]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+ay);}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+ay);break;}
                     }
                     else
                     {
-                        if(board[ax][ay-1]==0){PlayerAvailableMoves.add("r"+converter.get(ax)+ay);}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax)+ay);break;}
+                        if(board[ax][ay-1]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+ay);}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+ay);break;}
                     }
                 }
                 else {break;}
@@ -145,13 +145,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax][ay+1]==0){PlayerAvailableMoves.add("r"+converter.get(ax)+(ay+2));}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax)+(ay+2));break;}
+                        if(board[ax][ay+1]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+(ay+2));}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+(ay+2));break;}
                     }
                     else
                     {
-                        if(board[ax][ay+1]==0){BotAvailableMoves.add("r"+converter.get(ax)+(ay+2));}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax)+(ay+2));break;}
+                        if(board[ax][ay+1]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+(ay+2));}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+(ay+2));break;}
                     }
                 }
                 else {break;}
@@ -161,13 +161,13 @@ public class Rook extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax][ay+1]==0){BotAvailableMoves.add("r"+converter.get(ax)+(ay+2));}
-                        else{BotAvailableMoves.add("rx"+converter.get(ax)+(ay+2));break;}
+                        if(board[ax][ay+1]==0){BotAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+(ay+2));}
+                        else{BotAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+(ay+2));break;}
                     }
                     else
                     {
-                        if(board[ax][ay+1]==0){PlayerAvailableMoves.add("r"+converter.get(ax)+(ay+2));}
-                        else{PlayerAvailableMoves.add("rx"+converter.get(ax)+(ay+2));break;}
+                        if(board[ax][ay+1]==0){PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+converter.get(ax)+(ay+2));}
+                        else{PlayerAvailableMoves.add("r"+converter.get(x)+(y+1)+"x"+converter.get(ax)+(ay+2));break;}
                     }
                 }
                 else {break;}

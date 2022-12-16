@@ -1,7 +1,8 @@
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.Scanner;
+import java.util.Random;
 public class Game {
     public static boolean whiteColor;
     public static ArrayList<String> PlayerAvailableMoves = new ArrayList<>();
@@ -27,6 +28,9 @@ public class Game {
     {
         boolean gameDidntEnd= true;
         boolean unavailableMove=true;
+        Scanner myObj = new Scanner(System.in);
+        String playermove;
+        Random rn= new Random();
         initiateGame();
         for(int i=7;i>=0;i--)
         {
@@ -40,12 +44,23 @@ public class Game {
         {
             if(whiteColor)
             {
+                BotAvailableMoves.clear();
+                this.computeBotAvailableMoves();
                 PlayerAvailableMoves.clear();
                 this.computePlayerAvailableMoves();
                 System.out.println(PlayerAvailableMoves);
+                playermove=myObj.nextLine();
+                if(!PlayerAvailableMoves.contains(playermove))
+                {
+                    System.out.println("Impossible move");
+                    continue;
+                }
+                else{
+                    System.out.println("Nice move!");
+                }
                 BotAvailableMoves.clear();
                 this.computeBotAvailableMoves();
-                System.out.println(BotAvailableMoves);
+                System.out.println(BotAvailableMoves.get(rn.nextInt(BotAvailableMoves.size())));
             }
             else {
                 BotAvailableMoves.clear();
@@ -55,7 +70,7 @@ public class Game {
                 this.computePlayerAvailableMoves();
                 System.out.println(PlayerAvailableMoves);
             }
-            gameDidntEnd=false;
+            //gameDidntEnd=false;
         }
 
     }
@@ -78,22 +93,22 @@ public class Game {
     {
         if(whiteColor)
         {
-            /*Pawn wp1=new Pawn(Color.WHITE,0,1);board[0][1]=1;PlayerPieces.add(wp1);
+            Pawn wp1=new Pawn(Color.WHITE,0,1);board[0][1]=1;PlayerPieces.add(wp1);
             Pawn wp2=new Pawn(Color.WHITE,1,1);board[1][1]=1;PlayerPieces.add(wp2);
             Pawn wp3=new Pawn(Color.WHITE,2,1);board[2][1]=1;PlayerPieces.add(wp3);
             Pawn wp4=new Pawn(Color.WHITE,3,1);board[3][1]=1;PlayerPieces.add(wp4);
             Pawn wp5=new Pawn(Color.WHITE,4,1);board[4][1]=1;PlayerPieces.add(wp5);
             Pawn wp6=new Pawn(Color.WHITE,5,1);board[5][1]=1;PlayerPieces.add(wp6);
             Pawn wp7=new Pawn(Color.WHITE,6,1);board[6][1]=1;PlayerPieces.add(wp7);
-            Pawn wp8=new Pawn(Color.WHITE,7,1);board[7][1]=1;PlayerPieces.add(wp8);*/
+            Pawn wp8=new Pawn(Color.WHITE,7,1);board[7][1]=1;PlayerPieces.add(wp8);
             Rook wr1=new Rook(Color.WHITE,0,0);board[0][0]=1;PlayerPieces.add(wr1);
             Rook wr2=new Rook(Color.WHITE,7,0);board[7][0]=1;PlayerPieces.add(wr2);
-            //Knight wn1=new Knight(Color.WHITE,1,0);board[1][0]=1;PlayerPieces.add(wn1);
-            //Knight wn2=new Knight(Color.WHITE,6,0);board[6][0]=1;PlayerPieces.add(wn2);
+            Knight wn1=new Knight(Color.WHITE,1,0);board[1][0]=1;PlayerPieces.add(wn1);
+            Knight wn2=new Knight(Color.WHITE,6,0);board[6][0]=1;PlayerPieces.add(wn2);
             Bishop wb1=new Bishop(Color.WHITE,2,0);board[2][0]=1;PlayerPieces.add(wb1);
             Bishop wb2=new Bishop(Color.WHITE,5,0);board[5][0]=1;PlayerPieces.add(wb2);
-            //Queen wq=new Queen(Color.WHITE,3,0);board[3][0]=1;PlayerPieces.add(wq);
-            //King wk=new King(Color.WHITE,4,0);board[4][0]=1;PlayerPieces.add(wk);
+            Queen wq=new Queen(Color.WHITE,3,0);board[3][0]=1;PlayerPieces.add(wq);
+            King wk=new King(Color.WHITE,4,0);board[4][0]=1;PlayerPieces.add(wk);
 
             Pawn bp1=new Pawn(Color.BLACK,0,6);board[0][6]=2;BotPieces.add(bp1);
             Pawn bp2=new Pawn(Color.BLACK,1,6);board[1][6]=2;BotPieces.add(bp2);

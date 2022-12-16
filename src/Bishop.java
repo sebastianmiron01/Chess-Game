@@ -25,13 +25,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax+1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(ax+1)+ay);}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax+1)+ay);break;}
+                        if(board[ax+1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+ay);}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+ay);break;}
                     }
                     else
                     {
-                        if(board[ax+1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(ax+1)+ay);}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax+1)+ay);break;}
+                        if(board[ax+1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+ay);}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+ay);break;}
                     }
                 }
                 else {break;}
@@ -41,13 +41,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax+1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(ax+1)+ay);}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax+1)+ay);break;}
+                        if(board[ax+1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+ay);}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+ay);break;}
                     }
                     else
                     {
-                        if(board[ax+1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(ax+1)+ay);}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax+1)+ay);break;}
+                        if(board[ax+1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+ay);}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+ay);break;}
                     }
                 }
                 else {break;}
@@ -66,13 +66,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax-1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(ax-1)+ay);}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax-1)+ay);break;}
+                        if(board[ax-1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+ay);}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+ay);break;}
                     }
                     else
                     {
-                        if(board[ax-1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(ax-1)+ay);}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax-1)+ay);break;}
+                        if(board[ax-1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+ay);}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+ay);break;}
                     }
                 }
                 else {break;}
@@ -82,13 +82,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax-1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(ax-1)+ay);}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax-1)+ay);break;}
+                        if(board[ax-1][ay-1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+ay);}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+ay);break;}
                     }
                     else
                     {
-                        if(board[ax-1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(ax-1)+ay);}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax-1)+ay);break;}
+                        if(board[ax-1][ay-1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+ay);}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+ay);break;}
                     }
                 }
                 else {break;}
@@ -107,13 +107,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax+1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(ax+1)+(ay+2));}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax+1)+(ay+2));break;}
+                        if(board[ax+1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+2));}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+2));break;}
                     }
                     else
                     {
-                        if(board[ax+1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(ax+1)+(ay+2));}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax+1)+(ay+2));break;}
+                        if(board[ax+1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+2));}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+2));break;}
                     }
                 }
                 else {break;}
@@ -123,13 +123,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax+1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(ax+1)+(ay+2));}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax+1)+(ay+2));break;}
+                        if(board[ax+1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+2));}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+2));break;}
                     }
                     else
                     {
-                        if(board[ax+1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(ax+1)+(ay+2));}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax+1)+(ay+2));break;}
+                        if(board[ax+1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax+1)+(ay+2));}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax+1)+(ay+2));break;}
                     }
                 }
                 else {break;}
@@ -148,13 +148,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax-1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(ax-1)+(ay+2));}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax-1)+(ay+2));break;}
+                        if(board[ax-1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+(ay+2));}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+2));break;}
                     }
                     else
                     {
-                        if(board[ax-1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(ax-1)+(ay+2));}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax-1)+(ay+2));break;}
+                        if(board[ax-1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+(ay+2));}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+2));break;}
                     }
                 }
                 else {break;}
@@ -164,13 +164,13 @@ public class Bishop extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[ax-1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(ax-1)+(ay+2));}
-                        else{BotAvailableMoves.add("bx"+converter.get(ax-1)+(ay+2));break;}
+                        if(board[ax-1][ay+1]==0){BotAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+(ay+2));}
+                        else{BotAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+2));break;}
                     }
                     else
                     {
-                        if(board[ax-1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(ax-1)+(ay+2));}
-                        else{PlayerAvailableMoves.add("bx"+converter.get(ax-1)+(ay+2));break;}
+                        if(board[ax-1][ay+1]==0){PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+converter.get(ax-1)+(ay+2));}
+                        else{PlayerAvailableMoves.add("b"+converter.get(x)+(y+1)+"x"+converter.get(ax-1)+(ay+2));break;}
                     }
                 }
                 else {break;}
