@@ -1,4 +1,5 @@
 
+import javax.management.QueryEval;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -66,7 +67,7 @@ public class Game {
                 }
                 System.out.println("Nice move!");
                 char c=playermove.charAt(0);
-
+                boolean b=true;
                 switch(c)
                 {
                     default:
@@ -81,22 +82,19 @@ public class Game {
                                 if(deconverter.get(c2)==((Knight) k).x && c3==((Knight) k).y)
                                 {
                                     char c4=playermove.charAt(3);
-
-                                    boolean b;
                                     if(c4=='x')
                                     {
-
-                                        b=true;
+                                         
                                         char c5=playermove.charAt(4);
                                         int c6 =playermove.charAt(5)-49;
-                                        k.move(deconverter.get(c5),c6,b);
+                                        k.move(deconverter.get(c5),c6);elimPiece(deconverter.get(c5),c6,b);
+
 
                                     }
                                     else {
-                                        b=false;
+                                         
                                         int c5 =playermove.charAt(4)-49;
-                                        //System.out.println(c4+"="+deconverter.get(c4)+" "+c5);
-                                        k.move(deconverter.get(c4),c5,b);
+                                        k.move(deconverter.get(c4),c5);
                                     }
 
                                 }
@@ -113,26 +111,330 @@ public class Game {
                                 {
                                     char c4=playermove.charAt(3);
 
-                                    boolean b;
                                     if(c4=='x')
                                     {
 
-                                        b=true;
+                                         
                                         char c5=playermove.charAt(4);
                                         int c6 =playermove.charAt(5)-49;
-                                        k.move(deconverter.get(c5),c6,b);
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
 
                                     }
                                     else {
-                                        b=false;
+                                         
                                         int c5 =playermove.charAt(4)-49;
-                                        k.move(deconverter.get(c4),c5,b);
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'b':
+                        c2=playermove.charAt(1);
+                        c3=playermove.charAt(2)-49;
+                        for(Piece k:PlayerPieces)
+                        {
+                            if(k instanceof Bishop)
+                            {
+                                if(deconverter.get(c2)==((Bishop) k).x && c3==((Bishop) k).y)
+                                {
+                                    char c4=playermove.charAt(3);
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=playermove.charAt(4);
+                                        int c6 =playermove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =playermove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'r':
+                        c2=playermove.charAt(1);
+                        c3=playermove.charAt(2)-49;
+                        for(Piece k:PlayerPieces)
+                        {
+                            if(k instanceof Rook)
+                            {
+                                if(deconverter.get(c2)==((Rook) k).x && c3==((Rook) k).y)
+                                {
+                                    char c4=playermove.charAt(3);
+
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=playermove.charAt(4);
+                                        int c6 =playermove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =playermove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'q':
+                        c2=playermove.charAt(1);
+                        c3=playermove.charAt(2)-49;
+                        for(Piece k:PlayerPieces)
+                        {
+                            if(k instanceof Queen)
+                            {
+                                if(deconverter.get(c2)==((Queen) k).x && c3==((Queen) k).y)
+                                {
+                                    char c4=playermove.charAt(3);
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=playermove.charAt(4);
+                                        int c6 =playermove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =playermove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'k':
+                        c2=playermove.charAt(1);
+                        c3=playermove.charAt(2)-49;
+                        for(Piece k:PlayerPieces)
+                        {
+                            if(k instanceof King)
+                            {
+                                if(deconverter.get(c2)==((King) k).x && c3==((King) k).y)
+                                {
+                                    char c4=playermove.charAt(3);
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=playermove.charAt(4);
+                                        int c6 =playermove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =playermove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
                                     }
 
                                 }
                             }
                         }
                 }
+
+                BotAvailableMoves.clear();
+                this.computeBotAvailableMoves();
+                String botMove=BotAvailableMoves.get(rn.nextInt(BotAvailableMoves.size()));
+                System.out.println(botMove);
+                c=botMove.charAt(0);
+                b=false;
+                switch(c)
+                {
+                    default:
+                        break;
+                    case 'n':
+                        char c2=botMove.charAt(1);
+                        int c3=botMove.charAt(2)-49;
+                        for(Piece k:BotPieces)
+                        {
+                            if(k instanceof Knight)
+                            {
+                                if(deconverter.get(c2)==((Knight) k).x && c3==((Knight) k).y)
+                                {
+                                    char c4=botMove.charAt(3);
+
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=botMove.charAt(4);
+                                        int c6 =botMove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =botMove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'p':
+                        c2=botMove.charAt(1);
+                        c3=botMove.charAt(2)-49;
+                        for(Piece k:BotPieces)
+                        {
+                            if(k instanceof Pawn)
+                            {
+                                if(deconverter.get(c2)==((Pawn) k).x && c3==((Pawn) k).y)
+                                {
+                                    char c4=botMove.charAt(3);
+
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=botMove.charAt(4);
+                                        int c6 =botMove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =botMove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'b':
+                        c2=botMove.charAt(1);
+                        c3=botMove.charAt(2)-49;
+                        for(Piece k:BotPieces)
+                        {
+                            if(k instanceof Bishop)
+                            {
+                                if(deconverter.get(c2)==((Bishop) k).x && c3==((Bishop) k).y)
+                                {
+                                    char c4=botMove.charAt(3);
+
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=botMove.charAt(4);
+                                        int c6 =botMove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =botMove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'r':
+                        c2=botMove.charAt(1);
+                        c3=botMove.charAt(2)-49;
+                        for(Piece k:BotPieces)
+                        {
+                            if(k instanceof Rook)
+                            {
+                                if(deconverter.get(c2)==((Rook) k).x && c3==((Rook) k).y)
+                                {
+                                    char c4=botMove.charAt(3);
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=botMove.charAt(4);
+                                        int c6 =botMove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =botMove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'q':
+                        c2=botMove.charAt(1);
+                        c3=botMove.charAt(2)-49;
+                        for(Piece k:BotPieces)
+                        {
+                            if(k instanceof Queen)
+                            {
+                                if(deconverter.get(c2)==((Queen) k).x && c3==((Queen) k).y)
+                                {
+                                    char c4=botMove.charAt(3);
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=botMove.charAt(4);
+                                        int c6 =botMove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =botMove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                    case 'k':
+                        c2=botMove.charAt(1);
+                        c3=botMove.charAt(2)-49;
+                        for(Piece k:BotPieces)
+                        {
+                            if(k instanceof King)
+                            {
+                                if(deconverter.get(c2)==((King) k).x && c3==((King) k).y)
+                                {
+                                    char c4=botMove.charAt(3);
+
+
+                                    if(c4=='x')
+                                    {
+
+                                         
+                                        char c5=botMove.charAt(4);
+                                        int c6 =botMove.charAt(5)-49;
+                                        k.move(deconverter.get(c5),c6); elimPiece(deconverter.get(c5),c6,b);
+
+                                    }
+                                    else {
+                                         
+                                        int c5 =botMove.charAt(4)-49;
+                                        k.move(deconverter.get(c4),c5);
+                                    }
+
+                                }
+                            }
+                        }
+                }
+                System.out.println(BotPieces);
                 for(int i=7;i>=0;i--)
                 {
                     for(int j=0;j<=7;j++)
@@ -141,10 +443,8 @@ public class Game {
                     }
                     System.out.println();
                 }
-                BotAvailableMoves.clear();
-                this.computeBotAvailableMoves();
-                System.out.println(BotAvailableMoves.get(rn.nextInt(BotAvailableMoves.size())));
             }
+
             else {
                 BotAvailableMoves.clear();
                 this.computeBotAvailableMoves();
@@ -164,7 +464,86 @@ public class Game {
             piece.computePossibleMoves();
         }
     }
-
+ 
+    private void elimPiece(Integer x,Integer y,boolean b)
+    {
+        Piece eliminated = null;
+            if(b)
+            {
+                for(Piece p:BotPieces)
+                {
+                    if(p instanceof Pawn)
+                        if(((Pawn) p).x==x &&((Pawn) p).y==y)
+                            eliminated=p;
+                    if(p instanceof Queen)
+                        if(((Queen) p).x==x &&((Queen) p).y==y)
+                            eliminated=p;
+                    if(p instanceof Bishop)
+                    {
+                        if(((Bishop) p).x==x &&((Bishop) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof Knight)
+                    {
+                        if(((Knight) p).x==x &&((Knight) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof Rook)
+                    {
+                        if(((Rook) p).x==x &&((Rook) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                }
+                BotPieces.remove(eliminated);
+            }
+            else {
+                for(Piece p:PlayerPieces)
+                {
+                    if(p instanceof Pawn)
+                    {
+                        if(((Pawn) p).x==x &&((Pawn) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof Queen)
+                    {
+                        if(((Queen) p).x==x &&((Queen) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof Bishop)
+                    {
+                        if(((Bishop) p).x==x &&((Bishop) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof Knight)
+                    {
+                        if(((Knight) p).x==x &&((Knight) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof Rook)
+                    {
+                        if(((Rook) p).x==x &&((Rook) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                }
+                PlayerPieces.remove(eliminated);
+            }
+    }
     public void computePlayerAvailableMoves()
     {
         for(Piece piece :PlayerPieces)

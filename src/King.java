@@ -23,102 +23,8 @@ public class King extends Game implements Piece{
     }
 
     @Override
-    public void move(int x, int y, boolean b) {
-        if(b)
-        {
-            if(PlayerPieces.contains(this))
-            {
-                for(Piece p:BotPieces)
-                {
-                    if(p instanceof Pawn)
-                    {
-                        if(((Pawn) p).x==x &&((Pawn) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Queen)
-                    {
-                        if(((Queen) p).x==x &&((Queen) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Bishop)
-                    {
-                        if(((Bishop) p).x==x &&((Bishop) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Knight)
-                    {
-                        if(((Knight) p).x==x &&((Knight) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Rook)
-                    {
-                        if(((Rook) p).x==x &&((Rook) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                }
-            }
-            else {
-                for(Piece p:PlayerPieces)
-                {
-                    if(p instanceof Pawn)
-                    {
-                        if(((Pawn) p).x==x &&((Pawn) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Queen)
-                    {
-                        if(((Queen) p).x==x &&((Queen) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Bishop)
-                    {
-                        if(((Bishop) p).x==x &&((Bishop) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Knight)
-                    {
-                        if(((Knight) p).x==x &&((Knight) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Rook)
-                    {
-                        if(((Rook) p).x==x &&((Rook) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                }
-            }
+    public void move(int x, int y) {
 
-        }
         if(board[this.x][this.y]==1)
             board[x][y]=1;
         else {
@@ -136,23 +42,23 @@ public class King extends Game implements Piece{
             {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x-1][y]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+(y+1));}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+(y+1));}
+                    if(board[x-1][y]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+1));}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+1));}
                 }
                 else {
-                    if(board[x-1][y]==0){BotAvailableMoves.add("K"+converter.get(x-1)+(y+1));}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x-1)+(y+1));}
+                    if(board[x-1][y]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+1));}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+1));}
                 }
             }
             else {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x-1][y]==0){BotAvailableMoves.add("K"+converter.get(x-1)+(y+1));}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x-1)+(y+1));}
+                    if(board[x-1][y]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+1));}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+1));}
                 }
                 else {
-                    if(board[x-1][y]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+(y+1));}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+(y+1));}
+                    if(board[x-1][y]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+1));}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+1));}
                 }
             }
         }
@@ -169,23 +75,23 @@ public class King extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[x-1][y-1]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+y);}
-                        else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+y);}
+                        if(board[x-1][y-1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+y);}
+                        else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+y);}
                     }
                     else {
-                        if(board[x-1][y-1]==0){BotAvailableMoves.add("K"+converter.get(x-1)+y);}
-                        else {BotAvailableMoves.add("Kx"+converter.get(x-1)+y);}
+                        if(board[x-1][y-1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+y);}
+                        else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+y);}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[x-1][y-1]==0){BotAvailableMoves.add("K"+converter.get(x-1)+y);}
-                        else {BotAvailableMoves.add("Kx"+converter.get(x-1)+y);}
+                        if(board[x-1][y-1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+y);}
+                        else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+y);}
                     }
                     else {
-                        if(board[x-1][y-1]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+y);}
-                        else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+y);}
+                        if(board[x-1][y-1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+y);}
+                        else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+y);}
                     }
                 }
             }
@@ -199,23 +105,23 @@ public class King extends Game implements Piece{
             {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x][y-1]==0){PlayerAvailableMoves.add("K"+converter.get(x)+y);}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x)+y);}
+                    if(board[x][y-1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+y);}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+y);}
                 }
                 else {
-                    if(board[x][y-1]==0){BotAvailableMoves.add("K"+converter.get(x)+y);}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x)+y);}
+                    if(board[x][y-1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+y);}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+y);}
                 }
             }
             else {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x][y-1]==0){BotAvailableMoves.add("K"+converter.get(x)+y);}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x)+y);}
+                    if(board[x][y-1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+y);}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+y);}
                 }
                 else {
-                    if(board[x][y-1]==0){PlayerAvailableMoves.add("K"+converter.get(x)+y);}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x)+y);}
+                    if(board[x][y-1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+y);}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+y);}
                 }
             }
         }
@@ -228,23 +134,23 @@ public class King extends Game implements Piece{
             {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x+1][y-1]==0){PlayerAvailableMoves.add("K"+converter.get(x+1)+y);}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x+1)+y);}
+                    if(board[x+1][y-1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+y);}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+y);}
                 }
                 else {
-                    if(board[x+1][y-1]==0){BotAvailableMoves.add("K"+converter.get(x+1)+y);}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x+1)+y);}
+                    if(board[x+1][y-1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+y);}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+y);}
                 }
             }
             else {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x+1][y-1]==0){BotAvailableMoves.add("K"+converter.get(x+1)+y);}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x)+y);}
+                    if(board[x+1][y-1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+y);}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+y);}
                 }
                 else {
-                    if(board[x+1][y-1]==0){PlayerAvailableMoves.add("K"+converter.get(x+1)+y);}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x+1)+y);}
+                    if(board[x+1][y-1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+y);}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+y);}
                 }
             }
         }
@@ -257,23 +163,23 @@ public class King extends Game implements Piece{
             {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x+1][y]==0){PlayerAvailableMoves.add("K"+converter.get(x+1)+(y+1));}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x+1)+y);}
+                    if(board[x+1][y]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+(y+1));}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+y);}
                 }
                 else {
-                    if(board[x+1][y]==0){BotAvailableMoves.add("K"+converter.get(x+1)+(y+1));}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x+1)+(y+1));}
+                    if(board[x+1][y]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+(y+1));}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+1));}
                 }
             }
             else {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x+1][y]==0){BotAvailableMoves.add("K"+converter.get(x+1)+(y+1));}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x+1)+(y+1));}
+                    if(board[x+1][y]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+(y+1));}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+1));}
                 }
                 else {
-                    if(board[x+1][y]==0){PlayerAvailableMoves.add("K"+converter.get(x+1)+(y+1));}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x+1)+(y+1));}
+                    if(board[x+1][y]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+(y+1));}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x+1)+(y+1));}
                 }
             }
         }
@@ -288,23 +194,23 @@ public class King extends Game implements Piece{
                 {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[x+1][y+1]==0){PlayerAvailableMoves.add("K"+converter.get(x+1)+(y+2));}
-                        else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x+1][y+1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x+1)+(y+2));}
+                        else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                     else {
-                        if(board[x+1][y+1]==0){BotAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {BotAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x+1][y+1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[x+1][y+1]==0){BotAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {BotAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x+1][y+1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                     else {
-                        if(board[x+1][y+1]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x+1][y+1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                 }
             }
@@ -318,23 +224,23 @@ public class King extends Game implements Piece{
             {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x][y+1]==0){PlayerAvailableMoves.add("K"+converter.get(x)+(y+2));}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x)+(y+2));}
+                    if(board[x][y+1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+(y+2));}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+(y+2));}
                 }
                 else {
-                    if(board[x][y+1]==0){BotAvailableMoves.add("K"+converter.get(x)+(y+2));}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x)+(y+2));}
+                    if(board[x][y+1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+(y+2));}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+(y+2));}
                 }
             }
             else {
                 if(this.color==Color.WHITE)
                 {
-                    if(board[x][y+1]==0){BotAvailableMoves.add("K"+converter.get(x)+(y+2));}
-                    else {BotAvailableMoves.add("Kx"+converter.get(x)+(y+1));}
+                    if(board[x][y+1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+(y+2));}
+                    else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+(y+1));}
                 }
                 else {
-                    if(board[x][y+1]==0){PlayerAvailableMoves.add("K"+converter.get(x)+(y+2));}
-                    else {PlayerAvailableMoves.add("Kx"+converter.get(x)+(y+2));}
+                    if(board[x][y+1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x)+(y+2));}
+                    else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x)+(y+2));}
                 }
             }
         }
@@ -354,23 +260,23 @@ public class King extends Game implements Piece{
                     if(this.color==Color.WHITE)
                     {
 
-                        if(board[x-1][y+1]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x-1][y+1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                     else {
-                        if(board[x-1][y+1]==0){BotAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {BotAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x-1][y+1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                 }
                 else {
                     if(this.color==Color.WHITE)
                     {
-                        if(board[x-1][y+1]==0){BotAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {BotAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x-1][y+1]==0){BotAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {BotAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                     else {
-                        if(board[x-1][y+1]==0){PlayerAvailableMoves.add("K"+converter.get(x-1)+(y+2));}
-                        else {PlayerAvailableMoves.add("Kx"+converter.get(x-1)+(y+2));}
+                        if(board[x-1][y+1]==0){PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+converter.get(x-1)+(y+2));}
+                        else {PlayerAvailableMoves.add("k"+converter.get(x)+(y+1)+"x"+converter.get(x-1)+(y+2));}
                     }
                 }
             }

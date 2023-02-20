@@ -21,102 +21,8 @@ public class Queen extends Game implements Piece{
     }
 
     @Override
-    public void move(int x, int y, boolean b) {
-        if(b)
-        {
-            if(PlayerPieces.contains(this))
-            {
-                for(Piece p:BotPieces)
-                {
-                    if(p instanceof Pawn)
-                    {
-                        if(((Pawn) p).x==x &&((Pawn) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Queen)
-                    {
-                        if(((Queen) p).x==x &&((Queen) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Bishop)
-                    {
-                        if(((Bishop) p).x==x &&((Bishop) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Knight)
-                    {
-                        if(((Knight) p).x==x &&((Knight) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Rook)
-                    {
-                        if(((Rook) p).x==x &&((Rook) p).y==y)
-                        {
-                            p=null;
-                            BotPieces.remove(p);
-                        }
-                    }
-                }
-            }
-            else {
-                for(Piece p:PlayerPieces)
-                {
-                    if(p instanceof Pawn)
-                    {
-                        if(((Pawn) p).x==x &&((Pawn) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Queen)
-                    {
-                        if(((Queen) p).x==x &&((Queen) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Bishop)
-                    {
-                        if(((Bishop) p).x==x &&((Bishop) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Knight)
-                    {
-                        if(((Knight) p).x==x &&((Knight) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                    if(p instanceof Rook)
-                    {
-                        if(((Rook) p).x==x &&((Rook) p).y==y)
-                        {
-                            p=null;
-                            PlayerPieces.remove(p);
-                        }
-                    }
-                }
-            }
+    public void move(int x, int y) {
 
-        }
         if(board[this.x][this.y]==1)
             board[x][y]=1;
         else {
@@ -125,6 +31,8 @@ public class Queen extends Game implements Piece{
         board[this.x][this.y]=0;
         this.x=x;
         this.y=y;
+        System.out.println(BotPieces);
+
     }
 
     private void computeLeft(int ax, int ay) {
