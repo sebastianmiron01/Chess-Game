@@ -37,7 +37,8 @@ public class Game {
     void gameStart()
     {
         boolean gameDidntEnd= true;
-        boolean unavailableMove=true;
+        boolean playerCheckMate=false;
+        boolean botCheckMate=false;
         Scanner myObj = new Scanner(System.in);
         String playermove;
         Random rn= new Random();
@@ -245,7 +246,12 @@ public class Game {
                             }
                         }
                 }
-
+                if(!botHasKing())
+                {
+                    botCheckMate=true;
+                    gameDidntEnd=false;
+                    break;
+                }
                 BotAvailableMoves.clear();
                 this.computeBotAvailableMoves();
                 String botMove=BotAvailableMoves.get(rn.nextInt(BotAvailableMoves.size()));
@@ -434,7 +440,12 @@ public class Game {
                             }
                         }
                 }
-                System.out.println(BotPieces);
+                if(!playerHasKing())
+                {
+                    playerCheckMate=true;
+                    gameDidntEnd=false;
+                    break;
+                }
                 for(int i=7;i>=0;i--)
                 {
                     for(int j=0;j<=7;j++)
@@ -444,7 +455,6 @@ public class Game {
                     System.out.println();
                 }
             }
-
             else {
                 BotAvailableMoves.clear();
                 this.computeBotAvailableMoves();
@@ -453,9 +463,37 @@ public class Game {
                 this.computePlayerAvailableMoves();
                 System.out.println(PlayerAvailableMoves);
             }
-            //gameDidntEnd=false;
-        }
 
+        }
+        if (playerCheckMate)
+        {
+            System.out.println("You lost.");
+        }
+        else {
+            System.out.println("You won.");
+        }
+    }
+
+    private boolean playerHasKing() {
+        for(Piece p :PlayerPieces)
+        {
+            if(p instanceof King)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean botHasKing() {
+        for(Piece p :BotPieces)
+        {
+            if(p instanceof King)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void computeBotAvailableMoves() {
@@ -499,6 +537,13 @@ public class Game {
                             eliminated=p;
                         }
                     }
+                    if(p instanceof King)
+                    {
+                        if(((King) p).x==x &&((King) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
                 }
                 BotPieces.remove(eliminated);
             }
@@ -536,6 +581,13 @@ public class Game {
                     if(p instanceof Rook)
                     {
                         if(((Rook) p).x==x &&((Rook) p).y==y)
+                        {
+                            eliminated=p;
+                        }
+                    }
+                    if(p instanceof King)
+                    {
+                        if(((King) p).x==x &&((King) p).y==y)
                         {
                             eliminated=p;
                         }
