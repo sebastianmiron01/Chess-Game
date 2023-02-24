@@ -29,9 +29,10 @@ public class Queen extends Game implements Piece{
             board[x][y]=2;
         }
         board[this.x][this.y]=0;
+        displayBoard[x][y]=displayBoard[this.x][this.y];
+        displayBoard[this.x][this.y]="0 ";
         this.x=x;
         this.y=y;
-        System.out.println(BotPieces);
 
     }
 

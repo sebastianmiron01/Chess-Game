@@ -11,11 +11,14 @@ public class Game {
     public static ArrayList<Piece> PlayerPieces=new ArrayList<>();
     public static ArrayList<Piece> BotPieces=new ArrayList<>();
     public static HashMap<Integer,String> converter=new HashMap<>();
+    public static String[][] displayBoard=new String[8][8];
+    public static boolean showBoard;
     public static HashMap<Character, Integer> deconverter=new HashMap<>();
     public static int[][] board=new int[8][8];
-    Game(boolean whiteColor)
+    Game(boolean whiteColor,boolean showBoard)
     {
         this.whiteColor=whiteColor;
+        this.showBoard=showBoard;
         converter.put(0,"a");
         converter.put(1,"b");
         converter.put(2,"c");
@@ -43,13 +46,16 @@ public class Game {
         String playermove;
         Random rn= new Random();
         initiateGame();
-        for(int i=7;i>=0;i--)
+        if(showBoard)
         {
-            for(int j=0;j<=7;j++)
-            {
-                System.out.print(board[j][i] +" ");
-            }
-            System.out.println();
+             for(int i=7;i>=0;i--)
+             {
+                 for(int j=0;j<=7;j++)
+                 {
+                     System.out.print(displayBoard[j][i] +" ");
+                 }
+                 System.out.println();
+             }
         }
         while(gameDidntEnd)
         {
@@ -59,7 +65,7 @@ public class Game {
                 this.computeBotAvailableMoves();
                 PlayerAvailableMoves.clear();
                 this.computePlayerAvailableMoves();
-                System.out.println(PlayerAvailableMoves);
+                System.out.println("Your available moves are:"+PlayerAvailableMoves);
                 playermove=myObj.nextLine();
                 while(!PlayerAvailableMoves.contains(playermove))
                 {
@@ -255,7 +261,8 @@ public class Game {
                 BotAvailableMoves.clear();
                 this.computeBotAvailableMoves();
                 String botMove=BotAvailableMoves.get(rn.nextInt(BotAvailableMoves.size()));
-                System.out.println(botMove);
+
+                System.out.println("The computer plays:" +botMove);
                 c=botMove.charAt(0);
                 b=false;
                 switch(c)
@@ -446,13 +453,13 @@ public class Game {
                     gameDidntEnd=false;
                     break;
                 }
-                for(int i=7;i>=0;i--)
-                {
-                    for(int j=0;j<=7;j++)
-                    {
-                        System.out.print(board[j][i] +" ");
+                if(showBoard) {
+                    for (int i = 7; i >= 0; i--) {
+                        for (int j = 0; j <= 7; j++) {
+                            System.out.print(displayBoard[j][i] + " ");
+                        }
+                        System.out.println();
                     }
-                    System.out.println();
                 }
             }
             else {
@@ -605,41 +612,48 @@ public class Game {
     }
     void initiateGame()
     {
+        for(int i=0;i<8;i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                displayBoard[i][j]="0 ";
+            }
+        }
         if(whiteColor)
         {
-            Pawn wp1=new Pawn(Color.WHITE,0,1);board[0][1]=1;PlayerPieces.add(wp1);
-            Pawn wp2=new Pawn(Color.WHITE,1,1);board[1][1]=1;PlayerPieces.add(wp2);
-            Pawn wp3=new Pawn(Color.WHITE,2,1);board[2][1]=1;PlayerPieces.add(wp3);
-            Pawn wp4=new Pawn(Color.WHITE,3,1);board[3][1]=1;PlayerPieces.add(wp4);
-            Pawn wp5=new Pawn(Color.WHITE,4,1);board[4][1]=1;PlayerPieces.add(wp5);
-            Pawn wp6=new Pawn(Color.WHITE,5,1);board[5][1]=1;PlayerPieces.add(wp6);
-            Pawn wp7=new Pawn(Color.WHITE,6,1);board[6][1]=1;PlayerPieces.add(wp7);
-            Pawn wp8=new Pawn(Color.WHITE,7,1);board[7][1]=1;PlayerPieces.add(wp8);
-            Rook wr1=new Rook(Color.WHITE,0,0);board[0][0]=1;PlayerPieces.add(wr1);
-            Rook wr2=new Rook(Color.WHITE,7,0);board[7][0]=1;PlayerPieces.add(wr2);
-            Knight wn1=new Knight(Color.WHITE,1,0);board[1][0]=1;PlayerPieces.add(wn1);
-            Knight wn2=new Knight(Color.WHITE,6,0);board[6][0]=1;PlayerPieces.add(wn2);
-            Bishop wb1=new Bishop(Color.WHITE,2,0);board[2][0]=1;PlayerPieces.add(wb1);
-            Bishop wb2=new Bishop(Color.WHITE,5,0);board[5][0]=1;PlayerPieces.add(wb2);
-            Queen wq=new Queen(Color.WHITE,3,0);board[3][0]=1;PlayerPieces.add(wq);
-            King wk=new King(Color.WHITE,4,0);board[4][0]=1;PlayerPieces.add(wk);
+            Pawn wp1=new Pawn(Color.WHITE,0,1);board[0][1]=1;PlayerPieces.add(wp1);displayBoard[0][1]="wp";
+            Pawn wp2=new Pawn(Color.WHITE,1,1);board[1][1]=1;PlayerPieces.add(wp2);displayBoard[1][1]="wp";
+            Pawn wp3=new Pawn(Color.WHITE,2,1);board[2][1]=1;PlayerPieces.add(wp3);displayBoard[2][1]="wp";
+            Pawn wp4=new Pawn(Color.WHITE,3,1);board[3][1]=1;PlayerPieces.add(wp4);displayBoard[3][1]="wp";
+            Pawn wp5=new Pawn(Color.WHITE,4,1);board[4][1]=1;PlayerPieces.add(wp5);displayBoard[4][1]="wp";
+            Pawn wp6=new Pawn(Color.WHITE,5,1);board[5][1]=1;PlayerPieces.add(wp6);displayBoard[5][1]="wp";
+            Pawn wp7=new Pawn(Color.WHITE,6,1);board[6][1]=1;PlayerPieces.add(wp7);displayBoard[6][1]="wp";
+            Pawn wp8=new Pawn(Color.WHITE,7,1);board[7][1]=1;PlayerPieces.add(wp8);displayBoard[7][1]="wp";
+            Rook wr1=new Rook(Color.WHITE,0,0);board[0][0]=1;PlayerPieces.add(wr1);displayBoard[0][0]="wr";
+            Rook wr2=new Rook(Color.WHITE,7,0);board[7][0]=1;PlayerPieces.add(wr2);displayBoard[7][0]="wr";
+            Knight wn1=new Knight(Color.WHITE,1,0);board[1][0]=1;PlayerPieces.add(wn1);displayBoard[1][0]="wn";
+            Knight wn2=new Knight(Color.WHITE,6,0);board[6][0]=1;PlayerPieces.add(wn2);displayBoard[6][0]="wn";
+            Bishop wb1=new Bishop(Color.WHITE,2,0);board[2][0]=1;PlayerPieces.add(wb1);displayBoard[2][0]="wb";
+            Bishop wb2=new Bishop(Color.WHITE,5,0);board[5][0]=1;PlayerPieces.add(wb2);displayBoard[5][0]="wb";
+            Queen wq=new Queen(Color.WHITE,3,0);board[3][0]=1;PlayerPieces.add(wq);displayBoard[3][0]="wq";
+            King wk=new King(Color.WHITE,4,0);board[4][0]=1;PlayerPieces.add(wk);displayBoard[4][0]="wk";
 
-            Pawn bp1=new Pawn(Color.BLACK,0,6);board[0][6]=2;BotPieces.add(bp1);
-            Pawn bp2=new Pawn(Color.BLACK,1,6);board[1][6]=2;BotPieces.add(bp2);
-            Pawn bp3=new Pawn(Color.BLACK,2,6);board[2][6]=2;BotPieces.add(bp3);
-            Pawn bp4=new Pawn(Color.BLACK,3,6);board[3][6]=2;BotPieces.add(bp4);
-            Pawn bp5=new Pawn(Color.BLACK,4,6);board[4][6]=2;BotPieces.add(bp5);
-            Pawn bp6=new Pawn(Color.BLACK,5,6);board[5][6]=2;BotPieces.add(bp6);
-            Pawn bp7=new Pawn(Color.BLACK,6,6);board[6][6]=2;BotPieces.add(bp7);
-            Pawn bp8=new Pawn(Color.BLACK,7,6);board[7][6]=2;BotPieces.add(bp8);
-            Rook br1=new Rook(Color.BLACK,0,7);board[0][7]=2;BotPieces.add(br1);
-            Rook br2=new Rook(Color.BLACK,7,7);board[7][7]=2;BotPieces.add(br2);
-            Knight bn1=new Knight(Color.BLACK,1,7);board[1][7]=2;BotPieces.add(bn1);
-            Knight bn2=new Knight(Color.BLACK,6,7);board[6][7]=2;BotPieces.add(bn2);
-            Bishop bb1=new Bishop(Color.BLACK,2,7);board[2][7]=2;BotPieces.add(bb1);
-            Bishop bb2=new Bishop(Color.BLACK,5,7);board[5][7]=2;BotPieces.add(bb2);
-            Queen bq=new Queen(Color.BLACK,3,7);board[3][7]=2;BotPieces.add(bq);
-            King bk=new King(Color.BLACK,4,7);board[4][7]=2;BotPieces.add(bk);
+            Pawn bp1=new Pawn(Color.BLACK,0,6);board[0][6]=2;BotPieces.add(bp1);displayBoard[0][6]="bp";
+            Pawn bp2=new Pawn(Color.BLACK,1,6);board[1][6]=2;BotPieces.add(bp2);displayBoard[1][6]="bp";
+            Pawn bp3=new Pawn(Color.BLACK,2,6);board[2][6]=2;BotPieces.add(bp3);displayBoard[2][6]="bp";
+            Pawn bp4=new Pawn(Color.BLACK,3,6);board[3][6]=2;BotPieces.add(bp4);displayBoard[3][6]="bp";
+            Pawn bp5=new Pawn(Color.BLACK,4,6);board[4][6]=2;BotPieces.add(bp5);displayBoard[4][6]="bp";
+            Pawn bp6=new Pawn(Color.BLACK,5,6);board[5][6]=2;BotPieces.add(bp6);displayBoard[5][6]="bp";
+            Pawn bp7=new Pawn(Color.BLACK,6,6);board[6][6]=2;BotPieces.add(bp7);displayBoard[6][6]="bp";
+            Pawn bp8=new Pawn(Color.BLACK,7,6);board[7][6]=2;BotPieces.add(bp8);displayBoard[7][6]="bp";
+            Rook br1=new Rook(Color.BLACK,0,7);board[0][7]=2;BotPieces.add(br1);displayBoard[0][7]="br";
+            Rook br2=new Rook(Color.BLACK,7,7);board[7][7]=2;BotPieces.add(br2);displayBoard[7][7]="br";
+            Knight bn1=new Knight(Color.BLACK,1,7);board[1][7]=2;BotPieces.add(bn1);displayBoard[1][7]="bn";
+            Knight bn2=new Knight(Color.BLACK,6,7);board[6][7]=2;BotPieces.add(bn2);displayBoard[6][7]="bn";
+            Bishop bb1=new Bishop(Color.BLACK,2,7);board[2][7]=2;BotPieces.add(bb1);displayBoard[2][7]="bb";
+            Bishop bb2=new Bishop(Color.BLACK,5,7);board[5][7]=2;BotPieces.add(bb2);displayBoard[5][7]="bb";
+            Queen bq=new Queen(Color.BLACK,3,7);board[3][7]=2;BotPieces.add(bq);displayBoard[3][7]="bq";
+            King bk=new King(Color.BLACK,4,7);board[4][7]=2;BotPieces.add(bk);displayBoard[4][7]="bk";
         }
         else
         {
